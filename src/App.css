@@ -1,0 +1,530 @@
+:root {
+  --Lime: #D8DB2F;
+  --Red: #D73328;
+  --Slate-900: #133041;
+  --Slate-700: #4E6E7E;
+  --Slate-500: #6B94A8;
+  --Slate-300: #9ABED5;
+  --Slate-100: #E4F4FD;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Red Hat Text", sans-serif;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+a {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+h5 {
+  font-size: var(--Slate-700);
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+  font-size: 16px;
+}
+
+.container {
+  width: 375px;
+  margin: 0 auto;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: #ffff;
+}
+
+.header {
+  padding: 32px 24px 0px 24px;
+  margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.header h1 {
+  font-size: var(--font-sizetext-preset-2);
+  font-weight: 700;
+  line-height: 30px;
+  font-size: 24px;
+  text-align: left;
+  color: var(--Slate-900);
+  margin-bottom: 8px;
+}
+
+.header a {
+  font-weight: 500;
+  line-height: 24px;
+  font-size: 16px;
+  text-align: left;
+  color: var(--Slate-700);
+}
+
+input {
+  border: 1px solid var(--Slate-500);
+  border-radius: 5px;
+  background-color: #ffff;
+  padding: 10px 16px;
+  margin-bottom: 24px;
+}
+
+.ClearAllBtn {
+  margin-bottom: 24px;
+}
+
+.amount {
+  padding: 0px 24px;
+}
+
+
+.MortgageType {
+  margin-bottom: 40px;
+  padding: 0px 24px;
+}
+
+.radio-group {
+  border: 1px solid var(--Slate-500);
+  margin-bottom: 12px;
+  padding: 8px 16px 0px 16px;
+  display: flex;
+  border-radius: 5px;
+}
+
+.radio-group:hover {
+  background-color: #f7f8be;
+}
+
+input[type="radio"] {
+  border: 1px solid var(--Slate-700);
+}
+
+.yearsPercantageInput {
+  padding: 0px 24px;
+}
+
+.CalculatorBtn {
+  margin: 0 auto;
+  width: 327px;
+  padding: 16px 46px;
+  border-radius: 999px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22.5px;
+  text-align: center;
+  background-color: var(--Lime);
+  display: flex;
+  border: 2px solid var(--Lime);
+  gap: 8px;
+  justify-content: center;
+  color: var(--Slate-900);
+  margin-bottom: 40px;
+}
+
+.resultsArea {
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--Slate-900);
+  padding: none;
+  padding: 32px 24px;
+}
+
+.resultsArea img {
+  width: 164px;
+  align-self: center;
+  margin-bottom: 12px;
+}
+
+.resultsArea h3 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 30px;
+  text-align: center;
+  color: #ffff;
+  margin-bottom: 16px;
+}
+
+.resultsArea p {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: center;
+  color: var(--Slate-300);
+}
+
+.amount {
+  position: relative;
+  display: inline-block;
+}
+
+.amount input {
+  padding-left: 50px;
+  border: 1px solid var(--Slate-500);
+  border-radius: 4px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.amount input:focus {
+  border-color: var(--Lime);
+  outline: none;
+}
+
+.yearsPercantageInput input:focus {
+  border-color: var(--Lime);
+}
+
+.percantage input:focus {
+  border-color: var(--Lime);
+}
+
+.years {
+  position: relative;
+  display: inline-block;
+}
+
+.years input {
+  padding-left: 20px;
+  border: 1px solid var(--Slate-500);
+  border-radius: 4px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+
+.years .currency-symbol {
+  position: absolute;
+  right: 1.5px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: var(--Slate-700);
+  background-color: var(--Slate-100);
+  padding: 9.5px 16px;
+  border-radius: 0px 3px 3px 0px;
+}
+
+.years input:focus {
+  border-color: var(--Lime);
+  outline: none;
+}
+
+.years input:focus+.currency-symbol {
+  background-color: var(--Lime);
+}
+
+.percantage {
+  position: relative;
+  display: inline-block;
+}
+
+.percantage input {
+  padding-left: 20px;
+  border: 1px solid var(--Slate-500);
+  border-radius: 4px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.percantage .currency-symbol {
+  position: absolute;
+  right: 1.5px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: var(--Slate-700);
+  background-color: var(--Slate-100);
+  padding: 9.5px 16px;
+  border-radius: 0px 3px 3px 0px;
+}
+
+.percantage input:focus {
+  border-color: var(--Lime);
+  outline: none;
+}
+
+.amount .currency-symbol {
+  position: absolute;
+  left: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: var(--Slate-700);
+  background-color: var(--Slate-100);
+  padding: 9.9px 16px;
+  border-radius: 3px 0px 0px 3px;
+}
+
+.resultPayment {
+  border-top: 4px solid rgba(216, 219, 47, 1);
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+
+.showResult {
+  text-align: left;
+
+}
+
+.showResult h3 {
+  text-align: left;
+
+}
+
+.resultPayment {
+  padding: 32px;
+}
+
+.showResult p {
+  text-align: left;
+  margin-bottom: 40px;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+
+}
+
+.showResult .totalR {
+  color: #FFFFFF;
+  font-weight: 700;
+  line-height: 30px;
+  font-size: 24px;
+}
+
+.resultPayment h3 {
+  color: #9ABED5;
+  font-size: 16px;
+  font-weight: 500;
+
+}
+
+.showResult .monthlyPayment {
+  color: rgba(216, 219, 47, 1);
+  text-align: left;
+  font-weight: 700;
+  line-height: 70px;
+  font-size: 40px;
+}
+
+.showResult hr {
+  margin-block: 32px;
+  border: 1px solid rgba(154, 190, 213, 0.25);
+}
+
+@media(width >=768px) {
+  body {
+    background-color: var(--Slate-100);
+  }
+
+  .container {
+    margin: 0 auto;
+    width: 668px;
+    border-radius: 15px 15px 15px 15px;
+  }
+
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 40px 40px 0px 40px;
+  }
+
+  .amount {
+    padding: 0px 40px;
+    margin: 0 auto;
+  }
+
+  .amount input {
+    width: 590px;
+  }
+
+  .yearsPercantageInput {
+    padding: 0px 40px;
+    display: flex;
+    gap: 24px;
+  }
+
+  .MortgageType {
+    padding: 0px 40px;
+
+  }
+
+  .radio-group {
+    margin: 0 auto;
+    margin-bottom: 24px;
+  }
+
+  .CalculatorBtn {
+    position: relative;
+    right: 130px;
+  }
+
+  .resultsArea {
+    border-radius: 0px 0px 15px 15px;
+  }
+}
+
+@media(width >=1110px) {
+  #root {
+    padding: 209px 216px;
+  }
+
+  .container {
+    margin: 0 auto;
+    display: flex;
+    border-radius: 15px 15px 0px 15px;
+    width: 1100px;
+  }
+
+  .header {
+    width: 560px;
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+  }
+
+  .InfoArea {
+    width: 504px;
+  }
+
+  .resultsArea {
+    border-radius: 0px 15px 15px 15px;
+    position: relative;
+    right: 10px;
+    width: 504px;
+  }
+
+  .amount input {
+    width: 488px;
+  }
+
+  .CalculatorBtn {
+    position: relative;
+    right: 55px;
+  }
+
+  .resultsArea {
+    border-radius: 0px 15px 15px 90px;
+    position: relative;
+    left: 44px;
+    width: 504px;
+  }
+
+
+
+  .showResult {
+    text-align: left;
+
+  }
+
+  .showResult h3 {
+    text-align: left;
+
+  }
+
+  .resultPayment {
+    padding: 32px;
+  }
+
+  .showResult p {
+    text-align: left;
+    margin-bottom: 40px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+
+  }
+
+  .showResult .totalR {
+    color: #FFFFFF;
+    font-weight: 700;
+    line-height: 30px;
+    font-size: 24px;
+  }
+
+  .resultPayment h3 {
+    color: #9ABED5;
+    font-size: 16px;
+    font-weight: 500;
+
+  }
+
+  .showResult .monthlyPayment {
+    color: rgba(216, 219, 47, 1);
+    text-align: left;
+    font-weight: 700;
+    line-height: 70px;
+    font-size: 56px;
+  }
+
+  .showResult hr {
+    margin-block: 32px;
+    border: 1px solid rgba(154, 190, 213, 0.25);
+  }
+
+  .MortgageType {
+    padding: 0px 40px;
+    width: 569px;
+  }
+
+  .resultsArea img {
+    padding: 58px 1px;
+    width: 192px;
+  }
+
+  .resultsArea {
+    padding: 40px 40px;
+  }
+
+
+  .amount .currency-symbol {
+    position: absolute;
+    left: 41px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: var(--Slate-700);
+    background-color: var(--Slate-100);
+    padding: 9.9px 16px;
+    border-radius: 3px 0px 0px 3px;
+  }
+}
